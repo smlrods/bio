@@ -50,4 +50,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(ProductPhoto::class);
     }
+
+    public function testimonials(): HasMany
+    {
+        return $this->hasMany(Testimonial::class);
+    }
 }
