@@ -55,4 +55,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Testimonial::class);
     }
+
+    public function links(): HasMany
+    {
+        return $this->hasMany(Link::class);
+    }
 }
