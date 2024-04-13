@@ -12,6 +12,8 @@ class ProductPhoto extends Model
 
     protected $fillable = ['url', 'user_id'];
 
+    public $timestamps = false;
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
