@@ -13,7 +13,7 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                @if (!empty($productPhotos))
+                @if (!empty($productPhotos->toArray()))
                     <div class="grid grid-cols-3 gap-3">
                         @foreach ($productPhotos as $productPhoto)
                             <a class="block aspect-square" href="{{ route('product-photos.show', $productPhoto->id) }}">
