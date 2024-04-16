@@ -12,6 +12,8 @@ class Link extends Model
 
     protected $fillable = ['text', 'url', 'user_id'];
 
+    public $timestamps = false;
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
