@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProductPhotoController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TestimonialController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -18,6 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::resource('/product-photos', ProductPhotoController::class);
+    Route::resource('/testimonials', TestimonialController::class);
 });
 
 require __DIR__.'/auth.php';
