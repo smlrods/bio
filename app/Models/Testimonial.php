@@ -12,6 +12,8 @@ class Testimonial extends Model
 
     protected $fillable = ['user_id','text', 'author'];
 
+    public $timestamps = false;
+
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
