@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LinkController;
 use App\Http\Controllers\ProductPhotoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimonialController;
@@ -20,6 +21,7 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('/product-photos', ProductPhotoController::class);
     Route::resource('/testimonials', TestimonialController::class);
+    Route::resource('/links', LinkController::class);
 });
 
 require __DIR__.'/auth.php';
