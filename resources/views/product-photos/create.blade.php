@@ -10,30 +10,28 @@
         </div>
     </x-slot>
 
-    @empty($productPhotos)
-        <div class="py-12">
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white p-5 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                    <form method="POST" enctype="multipart/form-data" action="{{ route('product-photos.store') }}"
-                        class="flex flex-col items-start">
-                        @csrf
-                        <input type="file" name="image">
-                        <!-- Display general errors -->
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
-                        <button type="submit"
-                            class="px-3 py-2 bg-blue-500 mt-2 hover:bg-blue-700 text-white">Upload</button>
-                    </form>
-                </div>
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white p-5 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <form method="POST" enctype="multipart/form-data" action="{{ route('product-photos.store') }}"
+                    class="flex flex-col items-start">
+                    @csrf
+                    <input type="file" name="image">
+                    <!-- Display general errors -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+                    <button type="submit"
+                        class="px-3 py-2 bg-blue-500 mt-2 hover:bg-blue-700 text-white">Upload</button>
+                </form>
             </div>
         </div>
-    @endempty
+    </div>
 
 </x-app-layout>
