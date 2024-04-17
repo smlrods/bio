@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\LinkController;
+use App\Http\Controllers\PageInfoController;
 use App\Http\Controllers\ProductPhotoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimonialController;
@@ -18,6 +19,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::get('/pageinfo', [PageInfoController::class, 'edit'])->name('pageinfo.edit');
+    Route::put('/pageinfo', [PageInfoController::class, 'update'])->name('pageinfo.update');
 
     Route::resource('/product-photos', ProductPhotoController::class);
     Route::resource('/testimonials', TestimonialController::class);
