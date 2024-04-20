@@ -44,6 +44,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/pageinfo', [PageInfoController::class, 'edit'])->name('pageinfo.edit');
     Route::put('/pageinfo', [PageInfoController::class, 'update'])->name('pageinfo.update');
 
+    Route::get('customize', [CustomizeController::class, 'edit'])->name('customize.edit');
+    Route::put('customize', [CustomizeController::class, 'update'])->name('customize.update');
+
     Route::resource('/product-photos', ProductPhotoController::class);
     Route::resource('/testimonials', TestimonialController::class);
     Route::resource('/links', LinkController::class);
