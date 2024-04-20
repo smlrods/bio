@@ -45,6 +45,10 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
+        $pageInfo = $user->pageInfo()->create([
+            'title' => $user->name,
+        ]);
+
         Auth::login($user);
 
         return redirect(route('dashboard', absolute: false));
