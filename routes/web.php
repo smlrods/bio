@@ -5,10 +5,31 @@ use App\Http\Controllers\PageInfoController;
 use App\Http\Controllers\ProductPhotoController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TestimonialController;
+use App\Models\User;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::get('/p/{username}', function (string $username) {
+    $user = User::where('username', $username)->first();
+
+    if (! $user) {
+        abort(404);
+    }
+
+    $pageInfo = $user->pageInfo;
+    $productPhotos = $user->product_photos;
+    $testimonials = $user->testimonials;
+    $links = $user->links;
+
+    return view('user', [
+        'pageInfo' => $pageInfo,
+        'productPhotos' => $productPhotos,
+        'testimonials' => $testimonials,
+        'links' => $links,
+    ]);
 });
 
 Route::get('/dashboard', function () {
