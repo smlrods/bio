@@ -14,12 +14,6 @@ class PageInfoController extends Controller
         $user = auth()->user();
         $pageInfo = $user->pageInfo;
 
-        if (! $pageInfo) {
-            $pageInfo = $user->pageInfo()->create([
-                'title' => $user->name,
-            ]);
-        }
-
         return view('pageinfo/edit', ['pageInfo' => $pageInfo]);
     }
 
