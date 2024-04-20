@@ -17,6 +17,15 @@
         </div>
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <a href="./customize">
+                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                        {{ __('Customize') }}
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <a href="./product-photos">
                     <div class="p-6 text-gray-900 dark:text-gray-100">
                         {{ __('Imagens') }}
