@@ -67,4 +67,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(PageInfo::class);
     }
+
+    public function theme(): HasOne
+    {
+        return $this->hasOne(Theme::class);
+    }
 }
