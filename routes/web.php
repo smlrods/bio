@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomizeController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\PageInfoController;
 use App\Http\Controllers\ProductPhotoController;
@@ -23,12 +24,14 @@ Route::get('/p/{username}', function (string $username) {
     $productPhotos = $user->product_photos;
     $testimonials = $user->testimonials;
     $links = $user->links;
+    $theme = $user->theme;
 
     return view('user', [
         'pageInfo' => $pageInfo,
         'productPhotos' => $productPhotos,
         'testimonials' => $testimonials,
         'links' => $links,
+        'theme' => $theme,
     ]);
 });
 
