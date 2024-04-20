@@ -7,6 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>BIO</title>
     @vite(['resources/css/app.css', 'resources/js/main.js'])
+    <style>
+        body {
+            background: {{ $theme->page_background_color }} !important;
+        }
+
+        .link-btn {
+            background-color: {{ $theme->link_background_color }} !important;
+            color: {{ $theme->link_text_color }} !important;
+        }
+
+        .link-btn:hover {
+            background-color: {{ $theme->link_background_hover_color }} !important;
+            color: {{ $theme->link_text_hover_color }} !important;
+        }
+    </style>
 </head>
 
 <body class="relative h-full min-h-screen bg-pink max-w-screen-md mx-auto flex flex-col">
@@ -32,11 +47,11 @@
                         src="{{ $pageInfo->logo_url }}" alt="logo" />
                 </div>
             @endif
-            <h1 class="text-white font-h1 font-bold sm:text-4xl text-2xl mb-1">
+            <h1 style="color:{{ $theme->title_color }}" class="text-white font-h1 font-bold sm:text-4xl text-2xl mb-1">
                 {{ $pageInfo->title }}
             </h1>
             @if ($pageInfo->description)
-                <p class="font-p font-light text-xl text-[#F4DFD7]">
+                <p style="color:{{ $theme->description_color }}" class="font-p font-light text-xl text-[#F4DFD7]">
                     {{ $pageInfo->description }}
                 </p>
             @endif
@@ -46,7 +61,7 @@
 
     <!-- DIVIDER -->
     <div class="flex py-2 px-4 justify-center items-center">
-        <span class="w-full h-1 bg-black"></span>
+        <span style="background-color:{{ $theme->divisor_color }}" class="w-full h-1 bg-black"></span>
     </div>
 
     <!-- TESTIMONIALS -->
@@ -66,7 +81,7 @@
                                     <g mask="url(#mask0_25_250)">
                                         <path
                                             d="M52.0872 5.7066L55.9676 17.66H68.5323L58.3653 25.0504L62.2457 37.0122L52.0872 29.6226L41.9202 37.0122L45.8091 25.0504L35.6421 17.66H48.2059L52.0872 5.7066Z"
-                                            fill="black" />
+                                            fill="{{ $theme->testimonial_stars_color }}" />
                                     </g>
                                     <mask id="mask1_25_250" style="mask-type: luminance" maskUnits="userSpaceOnUse"
                                         x="0" y="5" width="34" height="33">
@@ -75,7 +90,7 @@
                                     <g mask="url(#mask1_25_250)">
                                         <path
                                             d="M16.6742 5.7066L20.5555 17.66H33.1192L22.9522 25.0504L26.8335 37.0122L16.6742 29.6226L6.50718 37.0122L10.3885 25.0504L0.229088 17.66H12.7937L16.6742 5.7066Z"
-                                            fill="black" />
+                                            fill="{{ $theme->testimonial_stars_color }}" />
                                     </g>
                                     <mask id="mask2_25_250" style="mask-type: luminance" maskUnits="userSpaceOnUse"
                                         x="70" y="5" width="35" height="33">
@@ -84,7 +99,7 @@
                                     <g mask="url(#mask2_25_250)">
                                         <path
                                             d="M87.5 5.7066L91.3805 17.66H103.945L93.7781 25.0504L97.6586 37.0122L87.5 29.6226L77.3331 37.0122L81.2219 25.0504L71.055 17.66H83.6196L87.5 5.7066Z"
-                                            fill="black" />
+                                            fill="{{ $theme->testimonial_stars_color }}" />
                                     </g>
                                     <mask id="mask3_25_250" style="mask-type: luminance" maskUnits="userSpaceOnUse"
                                         x="106" y="5" width="34" height="33">
@@ -93,7 +108,7 @@
                                     <g mask="url(#mask3_25_250)">
                                         <path
                                             d="M122.913 5.7066L126.794 17.66H139.358L129.191 25.0504L133.071 37.0122L122.913 29.6226L112.746 37.0122L116.635 25.0504L106.468 17.66H119.032L122.913 5.7066Z"
-                                            fill="black" />
+                                            fill="{{ $theme->testimonial_stars_color }}" />
                                     </g>
                                     <mask id="mask4_25_250" style="mask-type: luminance" maskUnits="userSpaceOnUse"
                                         x="141" y="5" width="34" height="33">
@@ -102,14 +117,15 @@
                                     <g mask="url(#mask4_25_250)">
                                         <path
                                             d="M158.326 5.7066L162.207 17.66H174.771L164.604 25.0504L168.485 37.0122L158.326 29.6226L148.158 37.0122L152.048 25.0504L141.881 17.66H154.445L158.326 5.7066Z"
-                                            fill="black" />
+                                            fill="{{ $theme->testimonial_stars_color }}" />
                                     </g>
                                 </svg>
-                                <p class="italic mb-2">
+                                <p style="{{ $theme->testimonial_color }}" class="italic mb-2">
                                     {{ $testimonial->text }}
                                 </p>
                                 <footer>
-                                    <cite class="font-light">{{ $testimonial->author }}</cite>
+                                    <cite style="{{ $theme->testimonial_author_color }}"
+                                        class="font-light">{{ $testimonial->author }}</cite>
                                 </footer>
                             </blockquote>
                         </article>
@@ -123,7 +139,8 @@
     <section class="mx-5 font-h1 flex flex-col gap-3">
         @foreach ($links as $link)
             <a href="{{ $link->url }}">
-                <button class="py-6 w-full border hover:bg-black hover:text-white border-black bg-white text-xl">
+                <button
+                    class="link-btn py-6 w-full border hover:bg-black hover:text-white border-black bg-white text-xl">
                     {{ $link->text }}
                 </button>
             </a>
