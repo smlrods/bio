@@ -49,6 +49,8 @@ class RegisteredUserController extends Controller
             'title' => $user->name,
         ]);
 
+        $theme = $user->theme()->create();
+
         Auth::login($user);
 
         return redirect(route('dashboard', absolute: false));
