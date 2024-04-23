@@ -1,66 +1,157 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# BIO
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+This is an application built using Laravel where users can add links, photos of their products and testimonials. Users can customise the colours of each element on the page.
 
-## About Laravel
+## **Table of Contents**
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+* [Project Overview](#project-overview)
+* [Requirements](#requirements)
+* [Installation](#Installation)
+* [Getting Started](#getting-started)
+* [Project Structure](#project-structure)
+* [Dependencies](#dependencies)
+* [Database Schema](#database-schema)
+* [MVC Pattern](#mvc-pattern)
+* [Testing](#testing)
+* [Purpose of the Project](#purpose-of-the-project)
+* [Contributing](#contributing)
+* [License](#license)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## **Project Overview**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+This Laravel project provides a foundation for building a social media links application. The project is designed to be modular and extensible, allowing you to easily add new features and functionality.
 
-## Learning Laravel
+## **Requirements**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+* PHP >= 8.2
+* Composer
+* SQLite
+* Node.js and npm
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## **Installation**
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+1. Clone the project repository:
 
-## Laravel Sponsors
+```sh
+git clone https://github.com/smlrods/bio.git
+```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+2. Enter the project directory:
 
-### Premium Partners
+```sh
+cd bio
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+3. Install the Composer dependencies:
 
-## Contributing
+```sh
+composer install
+```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+4. Install the npm dependencies:
 
-## Code of Conduct
+```sh
+npm install
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+5. Create a [`.env`](command:_github.copilot.openRelativePath?%5B%22.env%22%5D ".env") file from the provided [`.env.example`](command:_github.copilot.openRelativePath?%5B%22.env.example%22%5D ".env.example") file:
 
-## Security Vulnerabilities
+```sh
+cp .env.example .env
+```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+6. Generate the application key:
 
-## License
+```sh
+php artisan key:generate
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+7. Migrate the database:
+
+```sh
+php artisan migrate
+```
+
+## **Getting Started**
+
+1. Start the development server:
+
+```sh
+php artisan serve
+```
+
+2. Start the Vite dev server:
+
+```sh
+npm run dev
+```
+
+2. The application will be available at `http://localhost:8000`
+
+## **Project Structure**
+
+The project is organized into the following directories:
+
+* [`app`](command:_github.copilot.openRelativePath?%5B%22app%22%5D "app"): This directory contains the application logic, including models, controllers, and services.
+* [`config`](command:_github.copilot.openRelativePath?%5B%22config%22%5D "config"): This directory contains configuration files for the application.
+* [`database`](command:_github.copilot.openRelativePath?%5B%22database%22%5D "database"): This directory contains database migrations and seeds.
+* [`public`](command:_github.copilot.openRelativePath?%5B%22public%22%5D "public"): This directory contains the web server's public files, including the front-end assets.
+* [`resources`](command:_github.copilot.openRelativePath?%5B%22resources%22%5D "resources"): This directory contains resources used by the application, such as views and language files.
+* [`routes`](command:_github.copilot.openRelativePath?%5B%22routes%22%5D "routes"): This directory contains the routing definitions for the application.
+* [`storage`](command:_github.copilot.openRelativePath?%5B%22storage%22%5D "storage"): This directory contains application storage, such as logs and uploaded files.
+* [`tests`](command:_github.copilot.openRelativePath?%5B%22tests%22%5D "tests"): This directory contains unit and feature tests for the application.
+* [`vendor`](command:_github.copilot.openRelativePath?%5B%22vendor%22%5D "vendor"): This directory contains third-party dependencies managed by Composer.
+
+## **Dependencies**
+
+This project relies on several dependencies for its functionality:
+
+### PHP and Composer Dependencies
+
+* **Laravel**: This is the main framework used for this project. Laravel is a web application framework with expressive, elegant syntax.
+
+* **PHPUnit**: This is the testing framework used for writing unit tests in this project.
+
+### JavaScript and Node.js Dependencies
+
+* **Node.js and npm**: These are used for managing JavaScript dependencies and running tasks. Node.js is a JavaScript runtime built on Chrome's V8 JavaScript engine, and npm is the package manager for Node.js.
+
+* **Vite**: This is a build tool that provides faster and leaner development experience for modern web projects. It is used in this project for managing and bundling the JavaScript resources.
+
+* **Tailwind CSS**: This is a utility-first CSS framework for rapidly building custom user interfaces.
+
+## Database Schema
+
+[![Database Schema](./assets/db-schema.svg)](https://dbdiagram.io/d/bio-6619988703593b6b61e0379a)
+
+## **MVC Pattern**
+
+The project follows the MVC (Model-View-Controller) pattern. Models represent the data of the application, controllers handle user interaction and business logic, and views render the user interface.
+
+## **Testing**
+
+The project includes unit and feature tests for the application logic. You can run the tests using the following command:
+
+```sh
+cp .env.testing.example .env.testing
+```
+
+```sh
+npm run build
+```
+
+```sh
+php artisan test
+```
+
+## **Purpose of the Project**
+
+This project was created as a means to improve my Laravel skills. It serves as a practical application of Laravel's features and best practices. While building this bio links application, I've had the opportunity to explore various aspects of Laravel including routing, middleware, Eloquent ORM, Blade templates, and more. This hands-on experience has significantly contributed to my understanding and proficiency in Laravel.
+
+## **Contributing**
+
+We welcome contributions to this project.
+
+## **License**
+
+This project is licensed under the MIT License. Please see the LICENSE file for more information.
