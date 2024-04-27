@@ -1,43 +1,49 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex gap-5 items-center">
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <div class="flex gap-3 items-center">
+            <h2 class="font-semibold text-xl leading-tight">
                 {{ __('New Link') }}
             </h2>
-            <a href="{{ route('links.index') }}" class="px-3 py-2 bg-red-500 mt-2 hover:bg-red-700">
-                <button class="text-white">Cancel</button>
+            <a href="{{ route('links.index') }}">
+                <button class="btn btn-outline btn-error btn-sm">Cancel</button>
             </a>
         </div>
     </x-slot>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white p-5 dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                <form method="POST" action="{{ route('links.store') }}"
-                    class="flex flex-col items-start">
-                    @csrf
+    <div class="mt-3">
+        <form method="POST" action="{{ route('links.store') }}" class="flex flex-col items-start">
+            @csrf
 
-                    <label class="dark:text-white" for="text">Text</label>
-                    <input required type="text" id="text" name="text">
-
-                    <label class="dark:text-white" for="url">URL</label>
-                    <input required type="text" id="url" name="url">
-
-                    <!-- Display general errors -->
-                    @if ($errors->any())
-                        <div class="alert alert-danger">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                    @endif
-                    <button type="submit"
-                        class="px-3 py-2 bg-blue-500 mt-2 hover:bg-blue-700 text-white">Create</button>
-                </form>
+            <div class="mb-2">
+                <label class="form-control w-full max-w-xs">
+                    <div class="label">
+                        <span class="label-text">Text</span>
+                    </div>
+                    <x-text-input placeholder="Type Here" required type="text" id="text" name="text" />
+                </label>
             </div>
-        </div>
+
+            <div class="mb-2">
+                <label class="form-control w-full max-w-xs">
+                    <div class="label">
+                        <span class="label-text">URL</span>
+                    </div>
+                    <x-text-input placeholder="Type Here" required type="text" id="url" name="url" />
+                </label>
+            </div>
+
+            <!-- Display general errors -->
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            <button type="submit" class="btn btn-primary">Create</button>
+        </form>
     </div>
 
 </x-app-layout>

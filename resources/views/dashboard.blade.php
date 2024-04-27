@@ -1,51 +1,51 @@
 <x-app-layout>
     <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <h2 class="font-semibold text-xl leading-tight">
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
 
-    <div class="py-12 flex flex-col gap-2">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+    <div class="mt-3 flex flex-col gap-3 max-w-sm">
+        <div class="w-full bg-base-200">
+            <div class="overflow-hidden">
                 <a href="./pageinfo">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6">
                         {{ __('Page Info') }}
                     </div>
                 </a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="w-full bg-base-200">
+            <div class="overflow-hidden">
                 <a href="./customize">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6">
                         {{ __('Customize') }}
                     </div>
                 </a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="w-full bg-base-200">
+            <div class="overflow-hidden">
                 <a href="./product-photos">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6">
                         {{ __('Imagens') }}
                     </div>
                 </a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="w-full bg-base-200">
+            <div class="overflow-hidden">
                 <a href="./testimonials">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6">
                         {{ __('Feedbacks') }}
                     </div>
                 </a>
             </div>
         </div>
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 w-full">
-            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+        <div class="w-full bg-base-200">
+            <div class="overflow-hidden">
                 <a href="./links">
-                    <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="p-6">
                         {{ __('Links') }}
                     </div>
                 </a>
