@@ -1,17 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
-        <div class="flex gap-5 items-center">
-            <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+        <div class="flex gap-3 items-center">
+            <h2 class="font-semibold text-xl leading-tight">
                 {{ __('Product Photo ' . $productPhoto->id) }}
             </h2>
-            <a href="{{ route('product-photos.edit', $productPhoto->id) }}"
-                class="px-3 py-2 bg-blue-500 mt-2 hover:bg-blue-700">
-                <button class="text-white">Edit</button>
+            <a href="{{ route('product-photos.edit', $productPhoto->id) }}">
+                <button class="btn btn-primary btn-sm btn-outline">Edit</button>
             </a>
             <form method="POST" action="{{ route('product-photos.destroy', $productPhoto->id) }}">
                 @csrf
                 @method('DELETE')
-                <button class="px-3 py-2 bg-red-500 mt-2 hover:bg-red-700 text-white" type="submit">Delete</button>
+                <button class="btn btn-sm btn-outline btn-error" type="submit">Delete</button>
             </form>
         </div>
     </x-slot>
