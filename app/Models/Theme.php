@@ -22,6 +22,7 @@ class Theme extends Model
         'link_border_color',
         'link_text_color',
         'link_text_hover_color',
+        'link_background_hover_color',
         'page_background_color',
     ];
 
