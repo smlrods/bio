@@ -23,6 +23,7 @@ class UpdateThemeRequest extends FormRequest
             'link_border_color' => 'sometimes|string|max:7',
             'link_text_color' => 'sometimes|string|max:7',
             'link_text_hover_color' => 'sometimes|string|max:7',
+            'link_background_hover_color' => 'sometimes|string|max:7',
             'page_background_color' => 'sometimes|string|max:7',
         ];
     }
