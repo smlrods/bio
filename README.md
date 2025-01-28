@@ -1,4 +1,4 @@
-# BIO
+# LinkHub
 
 This is an application built using Laravel where users can add links, photos of their products and testimonials. Users can customise the colours of each element on the page.
 
@@ -33,7 +33,7 @@ This Laravel project provides a foundation for building a social media links app
 1. Clone the project repository:
 
 ```sh
-git clone https://github.com/smlrods/bio.git
+git clone https://github.com/smlrods/LinkHub.git
 ```
 
 2. Enter the project directory:
